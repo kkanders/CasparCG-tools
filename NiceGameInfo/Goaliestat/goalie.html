@@ -1,0 +1,91 @@
+<html>
+    <head>
+            <link rel="stylesheet" href="animate.css">
+        <style>
+            .nr {
+                background-image: linear-gradient(to bottom,#52514D, #000000);
+	            text-align:center;
+            	width: 20px;
+	            color: #FFFFFF;
+
+            }
+            .player_goalie {
+                background: #4f85bb;
+background: -moz-linear-gradient(top,  #4f85bb 0%, #4f85bb 100%);
+background: -webkit-linear-gradient(top,  #4f85bb 0%,#4f85bb 100%);
+background: linear-gradient(to bottom,  #4f85bb 0%,#4f85bb 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f85bb', endColorstr='#4f85bb',GradientType=0 );
+
+
+            } 
+            .player {
+                background: #ffffff;
+background: -moz-linear-gradient(top,  #ffffff 0%, #f1f1f1 50%, #e1e1e1 51%, #f6f6f6 100%);
+background: -webkit-linear-gradient(top,  #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%);
+background: linear-gradient(to bottom,  #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 );
+	            text-align:center;
+	            color: #000;
+
+
+            }
+
+            .header1 {
+    background: #959595;
+    background: -moz-linear-gradient(top,  #959595 0%, #0d0d0d 46%, #010101 50%, #0a0a0a 53%, #4e4e4e 76%, #383838 87%, #1b1b1b 100%);
+    background: -webkit-linear-gradient(top,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%);
+    background: linear-gradient(to bottom,  #959595 0%,#0d0d0d 46%,#010101 50%,#0a0a0a 53%,#4e4e4e 76%,#383838 87%,#1b1b1b 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', endColorstr='#1b1b1b',GradientType=0 );
+
+                color: fff;
+                text-align:center;
+
+            }
+
+        </style>
+        <script type="text/javascript">
+
+            function update(arg) { //the key/value pairs configured in CasparCG client are passed here
+              json = JSON.parse(arg); //You must parse the JSON string. I recommend storing the JSON outside this function so the parameters can be accessed by other functions
+                
+              document.getElementById("table").className = "animated fadeInDown slow";
+
+              if (json.f0 !== undefined) {  document.getElementById("f0").innerHTML = json.f0; }
+              if (json.f1 !== undefined) {  document.getElementById("f1").innerHTML = json.f1; }
+			  if (json.f2 !== undefined) {  document.getElementById("f2").innerHTML = json.f2; }
+              if (json.f3 !== undefined) {  document.getElementById("f3").innerHTML = json.f3; }
+            }
+
+            function play() {
+                document.getElementById("table").className = "animated fadeInDown slow";
+              /*  document.getElementById("f0").className = "header1 animated flash delay-2s";
+                document.getElementById("f1").className = "header1 animated flash delay-2s";
+				document.getElementById("f2").className = "header1 animated flash delay-2s";*/
+
+            }
+
+            function stop() {
+                document.getElementById("table").className = "animated fadeOutUp slow";
+
+            }
+
+              </script>
+
+    </head>
+    <body>
+        <table id="table" class="top animated flipInX slow">
+           <tr>
+                <td class="header1">Rank</td>
+                <td class="header1">Name</td>
+				<td class="header1">TEAM</td>
+				<td class="header1">Save %</td>
+            </tr>
+			<tr>
+                <td id="f0" class="player">Navn</td>
+                <td id="f1" class="player">GP(games Played)</td>
+				<td id="f2" class="player">TOI(Time On Ice)</td>
+				<td id="f3" class="player">Reddningsprosent</td>
+            </tr>
+        </table>
+    </body>
+</html>
